@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html id="myHtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="index/css/swiper3.0.min.css">
+    <link rel="stylesheet" href="index/css/index.css" />
+    <link rel="stylesheet" href="index/css/ironMan_pad.css" />
+    <link href="index/css/warcraft.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--pad版导航-->
+    <div class="Pad">
+        <div class="swiper-container pad_model00">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img onclick="magazine(this,'001');" src="index/img/coverPad.jpg" alt="" class="imgPad" />
+                    <img class="padCover00" src="index/img/highlightpad_L.png" alt="" />
+                    
+                </div>
+                <div class="swiper-slide">
+                    <img onclick="magazine(this,'002');" src="index/img/coverPad1.jpg" alt="" class="imgPad"/>
+                    <img class="padCover00" src="index/img/highlightpad_L.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="index/js/swiper3.0.min.js"></script>
+    <script src="index/js/app02.js" type="text/javascript" charset="utf-8"></script>
+
+    <!--<script src="js/index.js" type="text/javascript" charset="utf-8"></script>-->
+    <script type="text/javascript">
+    $(function() {
+        var DW = document.documentElement.offsetHeight || document.body.offsetHeight;
+        // $(".padCover").attr("src", "img/coverPad.jpg");
+        $(".Pad").css("display", "block");
+        $(".Phone").css("display", "none");
+        var DW = document.documentElement.offsetHeight || document.body.offsetHeight;
+        var remPer = (DW / 19.2) * 1.6 + "px";
+        $("html").css("font-size", remPer);
+
+        //实时监听屏幕宽度
+        /*
+        $(window).resize(function() {
+            var DW = document.documentElement.offsetHeight || document.body.offsetHeight;
+            var remPer = (DW / 19.2)*1.6 + "px"; 
+            $("html").css("font-size", remPer); 
+        });
+        */
+
+    })
+    </script>>
+
+    <script type="text/javascript">
+    $(function() {
+        var swiper = new Swiper('.pad_model00', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 0,
+            effect: 'coverflow',
+            slidesPerView: 2,
+            coverflow: {
+                rotate: 0,
+                stretch: -60,
+                depth: 50,
+                modifier: 2,
+                slideShadows: true
+            }
+
+        });
+        /* $(".smallCover").on("click", function() {
+             $(this).css({
+                 "-webkit-animation": "turn_big 0.2s forwards",
+                 "-moz-animation": "turn_big 0.2s forwards",
+                 "-o-animation": "turn_big 0.2s forwards",
+                 "animation": "turn_big 0.2s forwards",
+             })
+         })*/
+        /* $(".padCover").on("click", function() {
+             $(this).css({
+                 "-webkit-animation": "turn_pad 0.2s forwards",
+                 "-moz-animation": "turn_pad 0.2s forwards",
+                 "-o-animation": "turn_pad 0.2s forwards",
+                 "animation": "turn_pad 0.2s forwards",
+             })
+             $("#padCover00").css("display", "none")
+         })*/
+    })
+    </script>
+
+    <script type="text/javascript">
+    function magazine(magnify, magazine_name) {
+        //fullScreen(true);
+        /*$(magnify).parent().parent().parent().css({
+            "position": "absolute",
+            "width": "100%",
+            "height": "100%",
+            "left": "0",
+            "top": "0",
+            "-webkit-transform": "translate(0,0)",
+            "-moz-transform": "translate(0,0)",
+            "-ms-transform": "translate(0,0)",
+            "-o-transform": "translate(0,0)",
+            "transform": "translate(0,0)",
+        });
+        $(magnify).parent().parent().css({
+            "position": "absolute",
+            "left": "0",
+            "top": "0",
+            "-webkit-transform": "translate(0,0)",
+            "-moz-transform": "translate(0,0)",
+            "-ms-transform": "translate(0,0)",
+            "-o-transform": "translate(0,0)",
+            "transform": "translate(0,0)",
+        });
+        $(magnify).parent().parent().addClass("swiper-no-swiping");
+        $(magnify).parent().css("background", "#252628");
+
+
+        $(magnify).siblings().css("display", "none");*/
+
+        setTimeout(function() {
+            window.location = magazine_name + "/html/001.html";
+        }, 100);
+
+        setTimeout(function() {
+            fullScreen(true);
+        }, 100);
+    }
+    </script>
+
+    <script>
+    $(function() {
+        var leftSize = $(".pad_model00").css("left");
+        var fontSize = 427 / parseInt($("html").css("font-size"));
+        //alert(fontSize);
+        $(".pad_model00").css("left", fontSize + "rem");
+        fullScreen(false);
+    })
+    </script>
+
+    <!-- Initialize Swiper -->
+
+</body>
+
+</html>
